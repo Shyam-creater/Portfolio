@@ -489,10 +489,28 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
+  text-align: justify;
+  
 }
 
 .about-text p { margin-bottom: 15px; }
 
+.skills-section {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.8;
+}
+
+.skill-row {
+  display: flex;
+  gap: 15px; /* space between label & content */
+  margin-bottom: 5px;
+}
+
+.skill-row b {
+  min-width: 250px; /* makes labels align */
+  display: inline-block;
+  font-weight: bold;
+}
 
 
 /**
@@ -746,11 +764,13 @@ main {
 .project-img {
   position: relative;
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 9;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
+  background-color: white; /* fallback */
 }
+
 
 .project-img::before {
   content: "";
@@ -790,10 +810,11 @@ main {
 
 .project-item-icon-box ion-icon { --ionicon-stroke-width: 50px; }
 
+
 .project-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* No cropping */
   transition: var(--transition-1);
 }
 
@@ -1571,13 +1592,25 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+/* ✅ Mobile view adjustment for max-width 1250px */
+@media screen and (max-width: 1250px) {
+  .main-footer__lower {
+    margin-top: 50px;
+    font-size: 14px; /* slightly bigger for readability */
+  }
 
+  #msg {
+    margin-top: 10px; /* reset negative margin */
+    padding-left: 0; /* center in mobile */
+    text-align: center; /* make it center aligned */
+  }
+}
 .main-footer__lower{
   color: white;
   font-size: small;
   text-align: center;
   padding-top: 35%;
-
+  margin-top: 280px;
 }
 #msg{
   color: white;
