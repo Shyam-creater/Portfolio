@@ -489,27 +489,51 @@ main {
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
   line-height: 1.6;
-  text-align: justify;
-  
 }
 
-.about-text p { margin-bottom: 15px; }
-
+.about-text p { margin-bottom: 15px;  text-align: justify;}
 .skills-section {
   font-family: "Poppins", sans-serif;
   line-height: 1.8;
+  margin-bottom: 20px;
 }
 
 .skill-row {
   display: flex;
-  gap: 15px; /* space between label & content */
-  margin-bottom: 5px;
+  gap: 15px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
 }
 
 .skill-row b {
-  min-width: 250px; /* makes labels align */
+  min-width: 240px; /* desktop alignment */
   display: inline-block;
   font-weight: bold;
+}
+
+.skill-row span {
+  flex: 1;
+  word-break: break-word;
+}
+
+/* --------- Mobile Fix --------- */
+@media (max-width: 600px) {
+  .skill-row {
+    flex-direction: column; /* stack vertically */
+    gap: 2px;
+    
+  }
+
+  .skill-row b {
+    min-width: auto;  /* remove fixed width */
+    display: block;   /* label takes full width */
+    margin-bottom: 2px;
+  }
+
+  .skill-row span {
+    display: block;   /* value on next line */
+    width: 100%;
+  }
 }
 
 
@@ -980,7 +1004,7 @@ textarea.form-input::-webkit-resizer { display: none; }
  * responsive larger than 580px screen
  */
 
-@media (min-width: 580px) {
+@media (min-width: 720px) {
 
   /**
    * CUSTOM PROPERTY
