@@ -541,7 +541,7 @@ main {
   margin-bottom: 15px;
   text-align: justify;
   text-justify: inter-word;
-  hyphens: auto;
+ 
 }
 
 
@@ -596,7 +596,7 @@ main {
   .about-text p {
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
+ 
   }
 }
 
